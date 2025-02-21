@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Ch_4_RelativeLayout.MainActivity_Ch4">
+
+    <TextView
+        android:id="@+id/tv_green"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Green"
+        android:textColor="@color/white"
+        android:background="#4CAF50"
+        android:layout_centerHorizontal="true"
+        android:padding="8dp"
+        android:layout_margin="8dp"/>
+
+    <TextView
+        android:id="@+id/tv_yellow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_green"
+        android:text="Yellow"
+        android:textColor="@color/white"
+        android:background="#FFEB3B"
+        android:padding="8dp"
+        android:layout_margin="8dp"/>
+
+    <TextView
+        android:id="@+id/tv_orange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Orange"
+        android:layout_toEndOf="@id/tv_yellow"
+        android:layout_alignTop="@id/tv_yellow"
+        android:textColor="@color/white"
+        android:background="#FF9800"
+        android:padding="8dp"/>
+
+    <TextView
+        android:id="@+id/tv_blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_orange"
+        android:layout_alignStart="@+id/tv_orange"
+        android:layout_alignEnd="@id/tv_orange"
+        android:textAlignment="center"
+        android:text="Blue"
+        android:textColor="@color/white"
+        android:background="#3F51B5"
+        android:padding="8dp"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/tv_purple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/tv_blue"
+        android:layout_alignBottom="@id/tv_blue"
+        android:text="Purple"
+        android:textColor="@color/white"
+        android:background="#673AB7"
+        android:padding="8dp"
+        android:layout_marginStart="8dp"/>
+
+    <TextView
+        android:id="@+id/tv_pink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_purple"
+        android:layout_alignStart="@id/tv_purple"
+        android:layout_alignEnd="@id/tv_purple"
+        android:text="Pink"
+        android:textColor="@color/white"
+        android:background="#E91E63"
+        android:padding="8dp"
+        android:layout_marginTop="8dp"/>
+
+
+</RelativeLayout>
