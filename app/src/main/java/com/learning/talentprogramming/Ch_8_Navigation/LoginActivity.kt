@@ -1,20 +1,16 @@
 package com.learning.talentprogramming.Ch_8_Navigation
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.learning.talentprogramming.R
-import com.learning.talentprogramming.databinding.ActivityLoginCh9Binding
+import com.learning.talentprogramming.databinding.ActivityLoginCh8Binding
 
 class LoginActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityLoginCh9Binding
+    private lateinit var binding : ActivityLoginCh8Binding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityLoginCh9Binding.inflate(layoutInflater)
+        binding = ActivityLoginCh8Binding.inflate(layoutInflater)
         setContentView(binding.root)
         getData()
     }
