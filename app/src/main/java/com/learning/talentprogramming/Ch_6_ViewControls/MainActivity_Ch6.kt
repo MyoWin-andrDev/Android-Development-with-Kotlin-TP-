@@ -14,8 +14,9 @@ class MainActivity_Ch6 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        binding = ActivityMainCh6Binding.inflate(layoutInflater)
         setContentView(binding.root)
-        getEtText();
+        getEtText()
     }
 
     private fun getEtText(){

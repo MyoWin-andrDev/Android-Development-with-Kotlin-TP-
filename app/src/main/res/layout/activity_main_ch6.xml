@@ -30,7 +30,7 @@
         android:textSize="18sp"
         app:layout_constraintTop_toBottomOf="@id/et"
         app:layout_constraintBottom_toTopOf="@+id/btn"
-        android:text="Thomas"/>
+        android:text=""/>
 
     <Button
         android:id="@+id/btn"
