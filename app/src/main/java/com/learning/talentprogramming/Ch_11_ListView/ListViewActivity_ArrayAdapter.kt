@@ -1,11 +1,13 @@
 package com.learning.talentprogramming.Ch_11_ListView
 
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.learning.talentprogramming.R
+import android.R
+
 import com.learning.talentprogramming.databinding.ActivityListViewArrayAdapterBinding
 
 class ListViewActivity_ArrayAdapter : AppCompatActivity() {
@@ -17,4 +19,14 @@ class ListViewActivity_ArrayAdapter : AppCompatActivity() {
         setContentView(binding.root)
         initListView();
     }
+
+    private fun initListView(){
+        val programmingLanguage = arrayOf<String>("Bash", "C", "C#", "C++", "CSS", "Dart", "Git",
+             "GitKraken", "Go", "Haskell", "HTML", "Java", "JavaScript", "Json", "Kotlin", "npm",
+             "Python", "Ruby", "Rust", "TypeScript")
+
+        val adapter : ArrayAdapter<String> = ArrayAdapter(this, R.layout.simple_list_item_1, programmingLanguage)
+        binding.lvProgramming.adapter = adapter
+    }
+
 }

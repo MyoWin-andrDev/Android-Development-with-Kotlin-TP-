@@ -14,13 +14,13 @@
         tools:targetApi="31">
         <activity
             android:name=".Ch_11_ListView.ListViewActivity_Homework"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Ch_11_ListView.ListViewActivity_BaseAdapter"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Ch_11_ListView.ListViewActivity_ArrayAdapter"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Ch_8_Navigation.LoginActivity"
             android:exported="true" />
