@@ -22,7 +22,7 @@
             android:name=".Ch_12_RecyclerView.RecyclerViewActivity_Homework"
             android:exported="true" />
         <activity
-            android:name=".Ch_12_RecyclerView.RecyclerViewActivity"
+            android:name=".Ch_12_RecyclerView.RecyclerViewActivity_Practice"
             android:exported="true" />
         <activity
             android:name=".Ch_11_ListView.ListViewActivity_Homework"

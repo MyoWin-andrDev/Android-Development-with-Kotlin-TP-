@@ -3,20 +3,18 @@ package com.learning.talentprogramming.Ch_12_RecyclerView
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.learning.talentprogramming.Ch_12_RecyclerView.CustomListAdapter.LanguageAdapter
 import com.learning.talentprogramming.R
-import com.learning.talentprogramming.databinding.ActivityRecyclerViewBinding
+import com.learning.talentprogramming.databinding.ActivityRecyclerViewPracticeBinding
 
-class RecyclerViewActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityRecyclerViewBinding
+class RecyclerViewActivity_Practice : AppCompatActivity() {
+    private lateinit var binding : ActivityRecyclerViewPracticeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityRecyclerViewBinding.inflate(layoutInflater)
+        binding = ActivityRecyclerViewPracticeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initRecyclerView();
     }
@@ -29,8 +27,10 @@ class RecyclerViewActivity : AppCompatActivity() {
 
         val adapter = LanguageAdapter(programmingLanguage)
         binding.rvLanguage.adapter = adapter
-        val divider = DividerItemDecoration(this@RecyclerViewActivity, RecyclerView.VERTICAL) // binding.rvLanguage.addItemDecoration(divider)
+        val divider = DividerItemDecoration(this@RecyclerViewActivity_Practice, RecyclerView.VERTICAL)
         divider.setDrawable(resources.getDrawable(R.drawable.custom_divider))
         binding.rvLanguage.addItemDecoration(divider)
+        val customOffset = MyCustomOffset(40)
+        binding.rvLanguage.addItemDecoration(customOffset)
     }
 }

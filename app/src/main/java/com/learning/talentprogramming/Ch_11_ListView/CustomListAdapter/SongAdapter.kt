@@ -29,8 +29,8 @@ class SongAdapter(val songsList : List<String>, val singersList : List<String>) 
             val layoutInflater = LayoutInflater.from(parent?.context)
             val binding = ListViewSongBinding.inflate(layoutInflater, parent, false)
             v = binding.root
-            binding.txtTitle.text = songsList[position]
-            binding.txtSinger.text = singersList[position]
+            binding.tvTitle.text = songsList[position]
+            binding.tvSinger.text = singersList[position]
         }
         return v
     }

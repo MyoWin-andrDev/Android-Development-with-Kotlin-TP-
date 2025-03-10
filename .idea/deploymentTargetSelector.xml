@@ -8,12 +8,6 @@
       <SelectionState runConfigName="RecyclerViewActivity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="MainActivityCh5">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
-      <SelectionState runConfigName="MainActivity_Ch4">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
       <SelectionState runConfigName="MainActivity_Ch6">
         <option name="selectionMode" value="DROPDOWN" />
         <DropdownSelection timestamp="2025-03-10T11:45:24.306541580Z">
@@ -35,6 +29,12 @@
           </Target>
         </DropdownSelection>
         <DialogSelection />
+      </SelectionState>
+      <SelectionState runConfigName="ListViewActivity_Homework">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="RecyclerViewActivity_Homework">
+        <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
   </component>
