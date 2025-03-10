@@ -13,6 +13,12 @@
         android:theme="@style/Theme.TalentProgramming"
         tools:targetApi="31">
         <activity
+            android:name=".Ch_9_Intent.SecondActivity_Ch9"
+            android:exported="false" />
+        <activity
+            android:name=".Ch_9_Intent.MainActivity_Ch9"
+            android:exported="true" />
+        <activity
             android:name=".Ch_12_RecyclerView.RecyclerViewActivity_Homework"
             android:exported="true" />
         <activity
