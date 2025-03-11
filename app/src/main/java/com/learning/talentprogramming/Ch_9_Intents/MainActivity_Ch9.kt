@@ -1,14 +1,8 @@
-package com.learning.talentprogramming.Ch_9_Intent
+package com.learning.talentprogramming.Ch_9_Intents
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
-import android.util.Log
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.learning.talentprogramming.R
 import com.learning.talentprogramming.databinding.ActivityMainCh9Binding
 
 class MainActivity_Ch9 : AppCompatActivity() {
