@@ -6,7 +6,7 @@
          <item name="colorOnPrimary">#E91E63</item>
          <item name="colorSecondary">#FF5722</item>
          <item name="colorOnSecondary">#8BC34A</item>
-         <item name="android:statusBarColor">#03A9F4</item>
+         <item name="android:statusBarColor">@color/darkBlue</item>
     </style>
 
     <style name="Theme.TalentProgramming" parent="Base.Theme.TalentProgramming" />
