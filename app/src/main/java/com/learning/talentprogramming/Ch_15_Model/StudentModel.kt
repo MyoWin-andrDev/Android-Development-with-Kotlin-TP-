@@ -1,4 +1,4 @@
-package com.learning.talentprogramming.Ch_14_Model
+package com.learning.talentprogramming.Ch_15_Model
 
 data class StudentModel(
     val sName : String ,

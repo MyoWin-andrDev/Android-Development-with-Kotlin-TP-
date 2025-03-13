@@ -1,6 +1,6 @@
-package com.learning.talentprogramming.Ch_14_Model
+package com.learning.talentprogramming.Ch_15_Model
 
-class GenreModel(private var id : Int, private var name : String){
+class GenreClass(private var id : Int, private var name : String){
     //Setters
     fun setId( id : Int){
         this.id = id
@@ -16,7 +16,7 @@ class GenreModel(private var id : Int, private var name : String){
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
 
-        other as GenreModel
+        other as GenreClass
 
         if (id != other.id) return false
         if (name != other.name) return false
