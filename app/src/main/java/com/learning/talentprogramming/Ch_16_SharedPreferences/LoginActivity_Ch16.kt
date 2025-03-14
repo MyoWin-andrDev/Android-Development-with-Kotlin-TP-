@@ -9,6 +9,9 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.learning.talentprogramming.R
 import com.learning.talentprogramming.databinding.ActivityLoginCh16Binding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class LoginActivity_Ch16 : AppCompatActivity() {
     private lateinit var binding : ActivityLoginCh16Binding
@@ -26,7 +29,9 @@ class LoginActivity_Ch16 : AppCompatActivity() {
                 Intent(this@LoginActivity_Ch16, MainActivity_Ch16::class.java).also {
                     startActivity(it)
                 }
+                finish()
             }
+
         }
 
     }

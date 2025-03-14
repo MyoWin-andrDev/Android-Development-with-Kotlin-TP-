@@ -3,6 +3,7 @@ package com.learning.talentprogramming.Bonus_Chapter.CoroutineScope
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.learning.talentprogramming.R
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -19,6 +20,7 @@ class CoroutineActivity : AppCompatActivity() {
         GlobalScope.launch {
 
         }
+
         //Easy to use , light weight thread
         //Every 1000 of CoroutineScope is equal to 1 Thread
         //Three Type of "Coroutine Dispatchers"
@@ -27,6 +29,12 @@ class CoroutineActivity : AppCompatActivity() {
         //3. Dispatchers.IO (Used for background threads, like Network calls.Eg. API )
         //4. Dispatches.Unconfined (hardly ever used)
         CoroutineScope(Dispatchers.Unconfined).launch {
+
+        }
+
+        //LifeCycleScope
+        //lifecycle scope is active until the application is running. And pause on onPause() state
+        lifecycleScope.launch {
 
         }
     }

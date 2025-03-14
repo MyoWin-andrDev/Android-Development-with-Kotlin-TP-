@@ -14,6 +14,9 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.last
 import kotlinx.coroutines.launch
 
 class SplashActivity_Ch16 : AppCompatActivity() {
@@ -29,6 +32,7 @@ class SplashActivity_Ch16 : AppCompatActivity() {
             delay(3000L)
             val activity = if(isUserLoggedIn) MainActivity_Ch16::class.java else LoginActivity_Ch16::class.java
             startActivity(Intent(this@SplashActivity_Ch16, activity))
+            finish()
         }
     }
 }
