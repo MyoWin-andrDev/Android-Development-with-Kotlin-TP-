@@ -11,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.learning.talentprogramming.R
 import com.learning.talentprogramming.databinding.ActivitySplashCh16Binding
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -23,7 +24,7 @@ class SplashActivity_Ch16 : AppCompatActivity() {
         binding = ActivitySplashCh16Binding.inflate(layoutInflater)
         setContentView(binding.root)
         sharedPreferences = getSharedPreferences("MY_PREF", MODE_PRIVATE)
-        GlobalScope.launch {
+        CoroutineScope(Dispatchers.Main).launch {
             val isUserLoggedIn = sharedPreferences.getBoolean("isUserLoggedIn", false)
             delay(3000L)
             val activity = if(isUserLoggedIn) MainActivity_Ch16::class.java else LoginActivity_Ch16::class.java
