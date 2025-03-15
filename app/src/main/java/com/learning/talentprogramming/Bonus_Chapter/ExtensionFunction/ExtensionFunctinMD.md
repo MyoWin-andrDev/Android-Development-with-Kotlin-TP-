@@ -1,0 +1,70 @@
+### **Kotlin Extension Function**
+An **extension function** in Kotlin allows you to **add new functionality to an existing class** without modifying its source code. This is useful when you want to extend a class from a library or built-in types like `String`, `List`, etc.
+
+---
+
+### **Syntax**
+An extension function is defined by prefixing the function with the receiver type (the class you want to extend).
+
+```kotlin
+fun ClassName.functionName(): ReturnType {
+    // Function body
+}
+```
+
+---
+
+### **Example 1: Extending String Class**
+```kotlin
+fun String.reverseText(): String {
+    return this.reversed()
+}
+
+fun main() {
+    val text = "Kotlin"
+    println(text.reverseText())  // Output: niltoK
+}
+```
+Here, `reverseText()` is an extension function for the `String` class.
+
+---
+
+### **Example 2: Extending a Custom Class**
+```kotlin
+class Person(val name: String, val age: Int)
+
+fun Person.greet() {
+    println("Hello, my name is $name and I am $age years old.")
+}
+
+fun main() {
+    val person = Person("Alice", 25)
+    person.greet()
+    // Output: Hello, my name is Alice and I am 25 years old.
+}
+```
+
+---
+
+### **Example 3: Extension Function on List**
+```kotlin
+fun List<Int>.sumOfSquares(): Int {
+    return this.sumOf { it * it }
+}
+
+fun main() {
+    val numbers = listOf(1, 2, 3, 4)
+    println(numbers.sumOfSquares())  // Output: 30
+}
+```
+Here, we add a new function `sumOfSquares()` to the `List<Int>` class.
+
+---
+
+### **Key Points:**
+✔ **Does not modify the original class**  
+✔ **Defined outside the class but behaves as if it belongs to it**  
+✔ **Cannot access private or protected members of the class**  
+✔ **Works with built-in and custom classes**
+
+Would you like a detailed comparison with regular member functions? 🚀

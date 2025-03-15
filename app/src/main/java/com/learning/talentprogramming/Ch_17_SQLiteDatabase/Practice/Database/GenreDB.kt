@@ -33,13 +33,14 @@ class GenreDB(context: Context) : SQLiteOpenHelper(context, "GENRE_DB",  null, 1
     }
 
     @SuppressLint("Range")
-    fun getGenre() : List<GenreModel>{
+    fun getAllGenre() : List<GenreModel>{
         val genreList = ArrayList<GenreModel>()
         val db = this@GenreDB.readableDatabase
         val cursor = db.rawQuery("SELECT * FROM $TBL_GENRE",null)
         if(cursor.moveToFirst()){
             while (!cursor.isAfterLast){
                 genreList.add(GenreModel(cursor.getString(cursor.getColumnIndex("g_name"))))
+                cursor.moveToNext()
             }
         }
         cursor.close()
