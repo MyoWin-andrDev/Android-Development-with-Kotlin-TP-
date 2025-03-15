@@ -13,6 +13,9 @@
         android:theme="@style/Theme.TalentProgramming"
         tools:targetApi="31">
         <activity
+            android:name=".Ch_17_SQLiteDatabase.Practice.view.MainActivity_Ch17"
+            android:exported="true" />
+        <activity
             android:name=".Bonus_Chapter.DataStore.MainActivity_DSPref"
             android:exported="false" />
         <activity

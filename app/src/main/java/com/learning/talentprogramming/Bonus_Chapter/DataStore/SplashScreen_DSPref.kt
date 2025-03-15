@@ -3,7 +3,6 @@ package com.learning.talentprogramming.Bonus_Chapter.DataStore
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.lifecycleScope
 import com.learning.talentprogramming.databinding.ActivitySplashCh16Binding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

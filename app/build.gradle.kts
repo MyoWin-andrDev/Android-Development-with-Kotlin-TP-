@@ -25,6 +25,9 @@ android {
                 "proguard-rules.pro"
             )
         }
+        create("customDebugType") {
+            isDebuggable = true
+        }
     }
 
     buildFeatures{
