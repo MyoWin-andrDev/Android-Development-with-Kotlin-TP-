@@ -6,6 +6,7 @@
     <color name="darkBlue">#0E1E7B</color>
     <color name="yellow">#FFEB3B</color>
     <color name="grey">#767572</color>
+    <color name="purple">#673AB7</color>
     <color name="md_theme_primary">#8D4A5C</color>
     <color name="md_theme_onPrimary">#FFFFFF</color>
     <color name="md_theme_primaryContainer">#FFD9E0</color>

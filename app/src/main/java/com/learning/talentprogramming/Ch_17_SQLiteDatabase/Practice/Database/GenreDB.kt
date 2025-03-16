@@ -20,15 +20,17 @@ class GenreDB(context: Context) : SQLiteOpenHelper(context, "GENRE_DB",  null, 1
         TODO("Not yet implemented")
     }
 
-    fun insertGenre(genreName : String){
+    fun insertGenre(genreName : String) : Boolean {
         val db = this@GenreDB.writableDatabase
         val cv = ContentValues()
         cv.put("g_name", genreName)
         try {
             db.insert(TBL_GENRE, null, cv)
             db.close()
+            return true
         }catch (e : Exception){
             db.close()
+            return false
         }
     }
 
@@ -39,12 +41,39 @@ class GenreDB(context: Context) : SQLiteOpenHelper(context, "GENRE_DB",  null, 1
         val cursor = db.rawQuery("SELECT * FROM $TBL_GENRE",null)
         if(cursor.moveToFirst()){
             while (!cursor.isAfterLast){
-                genreList.add(GenreModel(cursor.getString(cursor.getColumnIndex("g_name"))))
+                genreList.add(GenreModel(
+                    cursor.getInt(cursor.getColumnIndex("g_id")),
+                    cursor.getString(cursor.getColumnIndex("g_name"))
+                ))
                 cursor.moveToNext()
             }
         }
         cursor.close()
         db.close()
         return genreList
+    }
+
+    fun updateGenre(genreId : Int ,genreName : String) : Boolean{
+        val db = this@GenreDB.writableDatabase
+        val cv = ContentValues()
+        cv.put("g_name", genreName)
+        try {
+            db.update(TBL_GENRE, cv, "g_id = $genreId", null)
+            db.close()
+            return true
+        }catch (e : Exception){
+            db.close()
+            return false
+        }
+    }
+
+    fun deleteGenre(genreId : Int){
+        val db = this@GenreDB.writableDatabase
+        try {
+            db.delete(TBL_GENRE, "g_id = $genreId", null)
+            db.close()
+        }catch(_ : Exception) {
+            db.close()
+        }
     }
 }
