@@ -15,10 +15,11 @@ class DataStore (val application: Application){
         private val Context.dataStore : DataStore<Preferences> by preferencesDataStore("MY_DATASTORE")
         val IS_USER_LOGGED_IN = booleanPreferencesKey("isUserLoggedIn")
     }
+    //Read Operation
     val isUserLoggedIn : Flow<Boolean?> = application.dataStore.data.map {
         it[IS_USER_LOGGED_IN] ?: false
     }
-
+    //Create / Update Operation
     suspend fun saveIsUserLoggedIn(isUserLoggedIn : Boolean){
         application.dataStore.edit {
             it[IS_USER_LOGGED_IN] = isUserLoggedIn

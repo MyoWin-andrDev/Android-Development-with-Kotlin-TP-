@@ -5,12 +5,6 @@
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="MainActivity_Ch17 (1)">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
-      <SelectionState runConfigName="ActionBarActivity_Ch18">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
       <SelectionState runConfigName="ToolBarActivity_Ch_19">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
@@ -18,6 +12,12 @@
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
       <SelectionState runConfigName="RecyclerViewActivity_Homework">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="SplashActivity_Ch16">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="EditActivity_Ch17">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
