@@ -1,4 +1,4 @@
-package com.learning.talentprogramming.Ch_17_SQLiteDatabase.Homework.adapter
+package com.learning.talentprogramming.Ch_17_RoomDatabase.Homework.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.learning.talentprogramming.Ch_17_SQLiteDatabase.Homework.model.Student
 import com.learning.talentprogramming.databinding.ListItemStudentBinding
 
-class StudentAdapter (private var studentList :List<Student>, private val onDeleteClick : (Student) -> Unit, private val onItemLongClick : (Student) -> Unit) : RecyclerView.Adapter<StudentAdapter.StudentViewHolder>() {
+class StudentAdapterRoom (private var studentList :List<Student>, private val onDeleteClick : (Student) -> Unit, private val onItemLongClick : (Student) -> Unit) : RecyclerView.Adapter<StudentAdapterRoom.StudentViewHolder>() {
 
     inner class  StudentViewHolder(val binding : ListItemStudentBinding) : RecyclerView.ViewHolder(binding.root)
 
