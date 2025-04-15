@@ -14,7 +14,6 @@
         app:layout_constraintTop_toTopOf="parent"
         android:text="Hello"
         android:textSize="22sp"
-        android:textStyle="bold"
         android:layout_marginStart="16dp"/>
 
     <TextView

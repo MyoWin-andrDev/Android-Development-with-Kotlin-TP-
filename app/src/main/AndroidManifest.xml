@@ -40,7 +40,7 @@
             android:name=".Bonus_Chapter.CoroutineScope.CoroutineActivity"
             android:exported="false" />
         <activity
-            android:name=".Ch_16_SharedPreferences.MainActivity_Ch16"
+            android:name=".Ch_16_SharedPreferences.HomeActivity_Ch16"
             android:exported="false" />
         <activity
             android:name=".Ch_16_SharedPreferences.LoginActivity_Ch16"

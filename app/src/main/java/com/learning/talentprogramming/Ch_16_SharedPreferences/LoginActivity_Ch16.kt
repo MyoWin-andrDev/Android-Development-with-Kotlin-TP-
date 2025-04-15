@@ -3,15 +3,8 @@ package com.learning.talentprogramming.Ch_16_SharedPreferences
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.learning.talentprogramming.R
 import com.learning.talentprogramming.databinding.ActivityLoginCh16Binding
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class LoginActivity_Ch16 : AppCompatActivity() {
     private lateinit var binding : ActivityLoginCh16Binding
@@ -23,10 +16,11 @@ class LoginActivity_Ch16 : AppCompatActivity() {
         binding.apply {
             setContentView(root)
             btLogin.setOnClickListener {
-                val editor = sharedPreferences.edit()
-                editor.putBoolean("isUserLoggedIn", true)
-                editor.apply()
-                Intent(this@LoginActivity_Ch16, MainActivity_Ch16::class.java).also {
+                sharedPreferences.edit().also {
+                    it.putBoolean("isUserLoggedIn", true)
+                    it.apply()
+                }
+                Intent(this@LoginActivity_Ch16, HomeActivity_Ch16::class.java).also {
                     startActivity(it)
                 }
                 finish()

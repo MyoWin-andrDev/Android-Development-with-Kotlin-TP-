@@ -20,7 +20,6 @@ class CoroutineActivity : AppCompatActivity() {
         GlobalScope.launch {
 
         }
-
         //Easy to use , light weight thread
         //Every 1000 of CoroutineScope is equal to 1 Thread
         //Three Type of "Coroutine Dispatchers"
