@@ -11,23 +11,22 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
 class SplashScreen_DSPref : AppCompatActivity() {
-    private lateinit var dataStore : DataStorePref
+    private lateinit var dataStore : DataStore
     private lateinit var binding : ActivitySplashCh16Binding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashCh16Binding.inflate(layoutInflater)
-        dataStore = DataStorePref(this.application)
         binding.apply {
+            dataStore = DataStore(application)
             setContentView(root)
-
-            CoroutineScope(Dispatchers.Main).launch {
-                val isUserLoggedIn = dataStore.getIsUserLoggedIn().first()
-                delay(3000L)
-                isUserLoggedIn?.let {
-                    val activity = if (it) MainActivity_DSPref::class.java else LoginActivity_DSPref::class.java
-                    startActivity(Intent(this@SplashScreen_DSPref, activity))
-                    finish()
-                }
+        }
+        CoroutineScope(Dispatchers.Main).launch {
+            val isUserLoggedIn = dataStore.isUserLoggedIn.first()
+            delay(3000L)
+            val activity = if(isUserLoggedIn!!) MainActivity_DSPref::class.java else LoginActivity_DSPref::class.java
+            Intent(this@SplashScreen_DSPref, activity).also {
+                startActivity(it)
+                finish()
             }
         }
     }
