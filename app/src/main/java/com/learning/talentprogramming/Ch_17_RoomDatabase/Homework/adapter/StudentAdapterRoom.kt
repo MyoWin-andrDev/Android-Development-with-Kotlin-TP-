@@ -4,10 +4,10 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.learning.talentprogramming.Ch_17_SQLiteDatabase.Homework.model.Student
+import com.learning.talentprogramming.Ch_17_RoomDatabase.Homework.database.entity.StudentModel
 import com.learning.talentprogramming.databinding.ListItemStudentBinding
 
-class StudentAdapterRoom (private var studentList :List<Student>, private val onDeleteClick : (Student) -> Unit, private val onItemLongClick : (Student) -> Unit) : RecyclerView.Adapter<StudentAdapterRoom.StudentViewHolder>() {
+class StudentAdapterRoom (private var studentList :List<StudentModel>, private val onDeleteClick : (StudentModel) -> Unit, private val onItemLongClick : (StudentModel) -> Unit) : RecyclerView.Adapter<StudentAdapterRoom.StudentViewHolder>() {
 
     inner class  StudentViewHolder(val binding : ListItemStudentBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -17,7 +17,7 @@ class StudentAdapterRoom (private var studentList :List<Student>, private val on
     override fun getItemCount(): Int = studentList.size
 
     @SuppressLint("NotifyDataSetChanged")
-    fun updateStudent(newStudentList : List<Student>){
+    fun updateStudent(newStudentList : List<StudentModel>){
         this.studentList = newStudentList
         notifyDataSetChanged()
     }
@@ -25,10 +25,10 @@ class StudentAdapterRoom (private var studentList :List<Student>, private val on
     override fun onBindViewHolder(holder: StudentViewHolder, position: Int) {
         holder.binding.apply {
             val student = studentList[position]
-            tvName.text = student.s_name
-            tvStudentId.text = student.s_id.toString()
-            tvGrade.text = student.s_grade
-            tvRoom.text = student.s_room
+            tvStudentId.text = student.id.toString()
+            tvName.text = student.name
+            tvGrade.text = student.grade
+            tvRoom.text = student.room
             btnDelete.setOnClickListener {
                 onDeleteClick(student)
             }

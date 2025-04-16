@@ -1,29 +1,33 @@
+@file:Suppress("CAST_NEVER_SUCCEEDS")
+
 package com.learning.talentprogramming.Ch_17_RoomDatabase.Homework.view
 
 import android.annotation.SuppressLint
+import android.os.Build
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.learning.talentprogramming.Ch_17_SQLiteDatabase.Homework.database.StudentDatabase
-import com.learning.talentprogramming.Ch_17_SQLiteDatabase.Homework.model.Student
-import com.learning.talentprogramming.Ch_17_SQLiteDatabase.Homework.myUtil.showToast
-import com.learning.talentprogramming.R
-import com.learning.talentprogramming.databinding.ActivityAddEditCh17Binding
+import androidx.lifecycle.lifecycleScope
+import com.learning.talentprogramming.Ch_17_RoomDatabase.Homework.database.database.StudentDBInstance
+import com.learning.talentprogramming.Ch_17_RoomDatabase.Homework.database.database.StudentDb
+import com.learning.talentprogramming.Ch_17_RoomDatabase.Homework.database.entity.StudentModel
+import com.learning.talentprogramming.Ch_17_RoomDatabase.Homework.myUtil.showToast
+import com.learning.talentprogramming.databinding.ActivityAddEditRoomCh17Binding
+import kotlinx.coroutines.launch
 
 class Add_EditActivity_Room_Ch17 : AppCompatActivity() {
-    private lateinit var binding : ActivityAddEditCh17Binding
-    private lateinit var studentDB : StudentDatabase
-    private var student : Student? = null
+    private lateinit var binding : ActivityAddEditRoomCh17Binding
+    private lateinit var studentDB : StudentDb
+    private var student : StudentModel? = null
+    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAddEditCh17Binding.inflate(layoutInflater)
+        binding = ActivityAddEditRoomCh17Binding.inflate(layoutInflater)
         binding.apply {
             setContentView(root)
-            studentDB = StudentDatabase(this@Add_EditActivity_Room_Ch17)
-            student = intent.getSerializableExtra("student") as? Student
+            studentDB = StudentDBInstance.getDatabaseInstance(this@Add_EditActivity_Room_Ch17)
+            student = intent.getSerializableExtra("STUDENT_DATA") as? StudentModel
 
             if (student != null) {
                 tvTitle.text = "Edit Student"
@@ -41,11 +45,11 @@ class Add_EditActivity_Room_Ch17 : AppCompatActivity() {
 
     private fun populateFields() {
         student?.let {
-            binding.etName.setText(it.s_name)
-            binding.etGrade.setText(it.s_grade)
-            binding.etRoomNo.setText(it.s_room)
-            binding.etGender.setText(it.s_gender)
-            binding.etFatherName.setText(it.s_fatherName)
+            binding.etName.setText(it.name)
+            binding.etGrade.setText(it.grade)
+            binding.etRoomNo.setText(it.room)
+            binding.etGender.setText(it.gender)
+            binding.etFatherName.setText(it.fatherName)
         }
     }
 
@@ -75,19 +79,23 @@ class Add_EditActivity_Room_Ch17 : AppCompatActivity() {
 
     private fun saveStudent() {
         binding.apply {
-            val newStudentRecord = Student(
-                s_name = etName.text.toString().trim(),
-                s_grade = etGrade.text.toString().trim(),
-                s_room = etRoomNo.text.toString().trim(),
-                s_gender = etGender.text.toString().trim(),
-                s_fatherName = etFatherName.text.toString().trim()
+            val newStudentRecord = StudentModel(
+                name = etName.text.toString().trim(),
+                grade = etGrade.text.toString().trim(),
+                room = etRoomNo.text.toString().trim(),
+                gender = etGender.text.toString().trim(),
+                fatherName = etFatherName.text.toString().trim()
             )
-            if (student == null) {
-                studentDB.addStudent(newStudentRecord)
-                showToast("{${newStudentRecord.s_name}'s Record Added")
-            } else {
-                studentDB.updateStudent(newStudentRecord)
-                showToast("{${newStudentRecord.s_name}'s Record Updated")
+            lifecycleScope.launch {
+                if (student == null) {
+                    if(studentDB.getStudentDAO().addStudent(newStudentRecord) > 0){
+                        showToast("${newStudentRecord.name}'s Record Added")
+                    }
+                } else {
+                    if(studentDB.getStudentDAO().updateStudent(newStudentRecord.id, newStudentRecord.name , newStudentRecord.grade, newStudentRecord.room, newStudentRecord.gender, newStudentRecord.fatherName) > 0){
+                        showToast("${newStudentRecord.name}'s Record Updated")
+                    }
+                }
             }
             finish()
         }
