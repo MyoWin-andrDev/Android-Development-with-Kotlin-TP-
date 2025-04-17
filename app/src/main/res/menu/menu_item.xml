@@ -20,9 +20,9 @@
         android:icon="@drawable/ic_delete"
         />
     <item
-        android:id="@+id/menu_delete"
-        android:title="Delete"
+        android:id="@+id/menu_add"
+        android:title="Add"
         app:showAsAction="ifRoom"
-        android:icon="@drawable/ic_delete"
+        android:icon="@drawable/ic_add"
         />
 </menu>

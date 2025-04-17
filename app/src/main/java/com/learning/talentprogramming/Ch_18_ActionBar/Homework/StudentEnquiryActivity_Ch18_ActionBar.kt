@@ -1,4 +1,4 @@
-package com.learning.talentprogramming.Ch_18_ActionBar
+package com.learning.talentprogramming.Ch_18_ActionBar.Homework
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -7,19 +7,18 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.learning.talentprogramming.R
+import com.learning.talentprogramming.databinding.ActivityStudentEnquiryCh18ActionBarBinding
 
-class SecondActivity_Ch18 : AppCompatActivity() {
+class StudentEnquiryActivity_Ch18_ActionBar : AppCompatActivity() {
+    private lateinit var binding : ActivityStudentEnquiryCh18ActionBarBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_second_ch_18)
+        binding = ActivityStudentEnquiryCh18ActionBarBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         val actionBar = supportActionBar
-        actionBar?.let {
-            it.apply {
-                title = "Second Page"
-                setDisplayHomeAsUpEnabled(true)
-                setDisplayShowHomeEnabled(true)
-            }
+        actionBar?.apply {
+            title = "Enquiry Student"
+            setDisplayHomeAsUpEnabled(true)
         }
     }
 

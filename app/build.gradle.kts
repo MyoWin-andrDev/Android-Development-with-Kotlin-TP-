@@ -55,7 +55,7 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation (libs.androidx.datastore.preferences)
-    val room_version = "2.6.1"
+    val room_version = "2.7.0"
     implementation(libs.androidx.room.runtime)
     ksp(libs.androidx.room.compiler)
     implementation("androidx.room:room-ktx:$room_version")

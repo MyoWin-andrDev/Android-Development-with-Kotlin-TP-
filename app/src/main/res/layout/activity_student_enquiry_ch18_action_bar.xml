@@ -5,20 +5,15 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Ch_19_ToolBar.ToolBarActivity_Ch_19">
+    tools:context=".Ch_18_ActionBar.Homework.StudentEnquiryActivity_Ch18_ActionBar">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="0dp"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:title="Home Page"
-        app:navigationIcon="@drawable/ic_edit"
-        app:subtitle="ToolBar"
-        app:menu="@menu/menu_item"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="This is add student activity"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

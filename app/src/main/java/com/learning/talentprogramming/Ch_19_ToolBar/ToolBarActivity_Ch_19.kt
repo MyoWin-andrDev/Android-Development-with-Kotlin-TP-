@@ -1,17 +1,12 @@
 package com.learning.talentprogramming.Ch_19_ToolBar
 
 import android.graphics.PorterDuff
-import android.graphics.PorterDuffColorFilter
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.learning.talentprogramming.Ch_17_SQLiteDatabase.Practice.myUtilities.showToast
 import com.learning.talentprogramming.R
-import com.learning.talentprogramming.databinding.ActivityActionBarCh18Binding
 import com.learning.talentprogramming.databinding.ActivityToolBarCh19Binding
 
 class ToolBarActivity_Ch_19 : AppCompatActivity() {
@@ -28,7 +23,7 @@ class ToolBarActivity_Ch_19 : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.men_item, menu)
+        menuInflater.inflate(R.menu.menu_item, menu)
         return super.onCreateOptionsMenu(menu)
     }
 

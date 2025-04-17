@@ -1,13 +1,10 @@
-package com.learning.talentprogramming.Ch_18_ActionBar
+package com.learning.talentprogramming.Ch_18_ActionBar.Practice
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.learning.talentprogramming.Ch_17_SQLiteDatabase.Practice.myUtilities.showToast
 import com.learning.talentprogramming.R
 import com.learning.talentprogramming.databinding.ActivityActionBarCh18Binding
@@ -32,7 +29,7 @@ class ActionBarActivity_Ch18 : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.men_item, menu)
+        menuInflater.inflate(R.menu.menu_item, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
