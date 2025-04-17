@@ -5,8 +5,15 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Ch_18_ActionBar.Homework.AddStudentActivity_Ch18_ActionBar">
-    
+    tools:context=".Ch_19_ToolBar.Homework.view.AddStudentActivity_Ch_19_Toolbar">
+
+    <include
+        android:id="@+id/tbToolbar"
+        layout="@layout/tb_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -14,6 +21,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:text="This is Add Student Activity"/>
+        android:text="This is Add Student Activity."/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
